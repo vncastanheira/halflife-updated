@@ -1225,3 +1225,39 @@ public:
 private:
 	unsigned short m_usSnarkFire;
 };
+
+// Enumeration of AK-47 animations in the view model file (v_ak47.mdl)
+// Must match the same order as the model itself (look through a model viewer)
+enum ak47_e
+{
+    AK47_IDLE,
+    AK47_RELOAD,
+    AK47_DRAW,
+    AK47_SHOOT1,
+    AK47_SHOOT2,
+    AK47_SHOOT3,
+};
+
+// Main weapon class
+class CAK47 : public CBasePlayerWeapon
+{
+    void Spawn() override;
+    void Precache() override;
+    // Which "slot" (column) in the HUD this weapon is located
+    int iItemSlot() override { return 2; }
+    bool GetItemInfo(ItemInfo* p) override;
+    void PrimaryAttack() override;
+    void Reload() override;
+    bool Deploy() override;
+    void WeaponIdle() override;
+    bool UseDecrement() override
+    {
+#if defined(CLIENT_WEAPONS)
+        return true;
+#else
+        return false;
+#endif
+    }
+
+    int m_iShell;
+};

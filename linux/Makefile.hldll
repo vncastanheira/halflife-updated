@@ -122,7 +122,8 @@ HLDLL_OBJS = \
 	$(HLDLL_OBJ_DIR)/weapons_shared.o \
 	$(HLDLL_OBJ_DIR)/world.o \
 	$(HLDLL_OBJ_DIR)/xen.o \
-	$(HLDLL_OBJ_DIR)/zombie.o
+	$(HLDLL_OBJ_DIR)/zombie.o \
+	$(HLDLL_OBJ_DIR)/ak47.o
 
 PM_OBJS = \
 	$(PM_OBJ_DIR)/pm_shared.o \
