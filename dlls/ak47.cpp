@@ -74,7 +74,7 @@ void CAK47::PrimaryAttack()
     // 6. Bullet type: Control end point effects and damage. If damage is not specified in slot number 8 below, it will use default value of MP5 damage.
     // 7. Frequency of tracer effect. Has a number between 0-4. 0 means no tracer at all (like in CS 1.6), 1 is the highest frequency.
     // 8. Damage. If left empty, it will use the default of value of bullet type.
-    m_pPlayer->FireBullets(1, vecSrc, vecAiming, VECTOR_CONE_3DEGREES, 8192, BULLET_PLAYER_MP5, 1, 30);
+    m_pPlayer->FireBullets(1, vecSrc, vecAiming, VECTOR_CONE_3DEGREES, 8192, BULLET_PLAYER_MP5, 1);
 
     // Play view model animation and firing sound
     SendWeaponAnim(AK47_SHOOT1 + RANDOM_LONG(0, 2));
@@ -88,7 +88,7 @@ void CAK47::PrimaryAttack()
         gpGlobals->v_right * -8, vecShellVelocity, pev->angles.y, m_iShell, TE_BOUNCE_SHELL);
 
     // Punch the camera to simulate recoil
-    m_pPlayer->pev->punchangle.x -= 2;
+    m_pPlayer->pev->punchangle.x -= 1;
     // Remove a bullet
     m_iClip--;
     // Next time for attack and weapon idling
