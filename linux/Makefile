@@ -7,7 +7,7 @@ OS:=$(shell uname)
 HOSTNAME:=$(shell hostname)
 
 ifeq "$(CFG)" ""
-	CFG=/home/vinicius/.local/share/Steam/steamapps/common/Half-Life/vinylhunger
+	CFG=/home/vinicius/.local/share/Steam/steamapps/common/Half-Life/vinylhunger/dlls
 endif
 
 SOURCE_DIR=..
